@@ -10,7 +10,7 @@ As I have some spare time in the evenings (god bless no overtime this time!) I d
 I inquired my friends of required data and began working. 
 
 ## Technicals of the project
-The projects contains of scheduled workflows pullind data from Riot games developer API, and then transforming it to make some beutiful (reasonably!) report with some simple insigts. I aim to explain all as clear as possible so even non-technical people could find it interesting but also to demonstrate ability to communicate without overcomplicating things. Using Postgre with docker would be much easier but i deliberately chose SQLite to get some more not so obvious database operations goiung arround. 
+The projects contains of scheduled workflows pullind data from Riot games developer API, and then transforming it to make some beutiful (reasonably!) report with some simple insigts. I aim to explain all as clear as possible so even non-technical people could find it interesting but also to demonstrate ability to communicate without overcomplicating things. 
 
 Project is intended to display my skill in few technologies combined such as:
 1. SQL 
