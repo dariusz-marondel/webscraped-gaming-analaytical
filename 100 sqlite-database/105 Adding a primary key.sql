@@ -1,4 +1,4 @@
---first table
+-- players table
 create table players_dg_tmp
 (
     "index"  INTEGER,
@@ -22,7 +22,7 @@ create index ix_players_index
     on players ("index");
 
 
--- second table
+-- champion_pool table
 
 create table champion_pool_dg_tmp
 (
