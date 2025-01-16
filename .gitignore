@@ -1,5 +1,5 @@
 .venv/
 sqlite_database/project_database.db
 .idea/
-api_calls/API key.env
+api_calls/api_key.env
 airflow-docker/logs/*
