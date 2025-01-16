@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv('301 API key.env')
+load_dotenv('API key.env')
 # Access the API key
 api_key = os.getenv('API_KEY')
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS summoners_ids (
 '''
 
 import sqlite3
-main_db = sqlite3.connect(r'/sqlite_database/104 Project DB.db')
+main_db = sqlite3.connect(r'/sqlite_database/project_database.db')
 cursor = main_db.cursor()
 
 # Insert data into table

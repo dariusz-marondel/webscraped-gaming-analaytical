@@ -1,4 +1,5 @@
 .venv/
-100 sqlite-database/104 Project DB.db
+sqlite_database/project_database.db
 .idea/
-300 Data pull and transformation/301 API key.env
+api_calls/API key.env
+airflow-docker/logs/*

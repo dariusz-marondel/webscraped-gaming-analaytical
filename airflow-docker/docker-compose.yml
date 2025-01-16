@@ -13,18 +13,18 @@ services:
         depends_on:
             - postgres
         env_file:
-            - 203.env
+            - .env
         volumes:
             - ./dags:/opt/airflow/dags
             - ./logs:/opt/airflow/logs
     webserver:
         image: apache/airflow
-        entrypoint: ./scripts/202-entrypoint.sh
+        entrypoint: ./scripts/_entrypoint.sh
         depends_on:
             - postgres
             - scheduler
         env_file:
-            - 203.env
+            - .env
         volumes:
             - ./dags:/opt/airflow/dags
             - ./logs:/opt/airflow/logs

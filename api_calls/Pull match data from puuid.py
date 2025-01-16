@@ -7,7 +7,7 @@ import os
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv('301 API key.env')
+load_dotenv('API key.env')
 
 # Access the API key
 api_key = os.getenv('API_KEY')
@@ -26,7 +26,7 @@ headers = {
 response = requests.get(url, headers=headers)
 
 # Specify the filename for .json output
-filename = "305 MatchIDs.json"
+filename = "MatchIDs.json"
 
 # Handle the response
 if response.status_code == 200:
