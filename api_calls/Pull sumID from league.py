@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS summoners_ids (
 '''
 
 import sqlite3
-main_db = sqlite3.connect(r'/Users/amberlights/Repositories/simple-lol-stats/100 sqlite-database/104 Project DB.db')
+main_db = sqlite3.connect(r'/sqlite_database/104 Project DB.db')
 cursor = main_db.cursor()
 
 # Insert data into table
