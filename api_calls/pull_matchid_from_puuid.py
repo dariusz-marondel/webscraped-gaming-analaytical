@@ -21,8 +21,8 @@ FROM summoners;
 # Make sure its a list
 puuid_list = puuid_list['puu_id'].tolist()
 
-start_time = 1736204400 # Last patch epoch time in seconds
-end_time = int(time.time())
+start_time = 1734692400 # Last patch epoch time in seconds
+end_time = 1736204400
 count = 100
 headers = {
     "X-Riot-Token": api_key
@@ -50,8 +50,11 @@ for puuid in puuid_list:
     if call_count % 100 == 0 and call_count != len(game_id_list):
         time.sleep(120)
 
+'''CREATE TABLE IF NOT EXISTS games_p24 (
+game_id TEXT PRIMARY KEY
+)'''
 for game_id in game_id_list:
-    cursor.execute('INSERT OR IGNORE INTO games (game_id) VALUES (?)', (game_id,))
+    cursor.execute('INSERT OR IGNORE INTO games_p24 (game_id) VALUES (?)', (game_id,))
 
 main_db.commit()
 main_db.close()

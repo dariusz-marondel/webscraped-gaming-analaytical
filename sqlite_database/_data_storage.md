@@ -15,4 +15,4 @@ Pros:
 Cons: 
 None!
 
-[Lets get to work!](103%20Our%20Champions%20data%20ETL.ipynb)
+[Lets get to work!](sample_data_etl.ipynb)
