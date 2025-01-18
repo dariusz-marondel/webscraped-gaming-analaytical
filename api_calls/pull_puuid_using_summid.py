@@ -1,7 +1,9 @@
-# Separate file cause we will have to schedule API calls
-
 import sqlite3
 import pandas as pd
+import os
+from dotenv import load_dotenv
+import time
+import requests
 main_db = sqlite3.connect(r'/sqlite_database/project_database.db')
 cursor = main_db.cursor()
 
@@ -13,10 +15,6 @@ LIMIT 300;
 
 summoner_ids = summoner_ids['summ_id_encr'].tolist()
 
-# Get API key from env file
-import os
-from dotenv import load_dotenv
-
 # Load environment variables from .env file
 load_dotenv('api_key.env')
 # Access the API key
@@ -26,8 +24,6 @@ headers = {
     "X-Riot-Token": api_key
 }
 
-import time
-import requests
 puuid_list = []
 
 def call_puuid_api(i, summoner_id):

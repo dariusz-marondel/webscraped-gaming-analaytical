@@ -1,12 +1,11 @@
 import requests
-
-# Get API key from env file
 import os
 from dotenv import load_dotenv
+import sqlite3
 
 # Load environment variables from .env file
 load_dotenv('api_key.env')
-# Access the API key
+# Get API key from env file
 api_key = os.getenv('API_KEY')
 
 summoner_ids = []
@@ -32,7 +31,7 @@ for league in leagues:
             print(f'Failed to rertieve data. Status code: {response.status_code}')
 
 # Based on official lol stats we should have see 50k-100k players not 2460,
-# obviously caused by not calling all pages for all leagues
+# obviously caused by not calling all pages for each league
 # however 2,5k will be sufficient for this project
 
 # We store it in sqlite table created with DataGrip
@@ -40,10 +39,9 @@ for league in leagues:
 CREATE TABLE IF NOT EXISTS summoners_ids (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     summ_id_encr TEXT UNIQUE NOT NULL
-);
+    puu_id_encr TEXT UNIQUE NULL);
 '''
 
-import sqlite3
 main_db = sqlite3.connect(r'/sqlite_database/project_database.db')
 cursor = main_db.cursor()
 
@@ -57,5 +55,6 @@ for summ_id in summoner_ids:
 # Commit the changes and close the connection
 main_db.commit()
 main_db.close()
+
 
 print("Data insertion complete.")
