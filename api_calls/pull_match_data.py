@@ -15,9 +15,8 @@ cursor = main_db.cursor()
 
 game_id_list = pd.read_sql('''
 SELECT game_id
-FROM games_p24
-ORDER BY RANDOM()
-LIMIT 10000;
+FROM games
+;
 ''', main_db)
 
 # Making sure we pass list of IDs in form of a list
@@ -67,7 +66,7 @@ for i, game_id in enumerate(game_id_list):
         time.sleep(1)
     if call_count % 100 == 0:
         time.sleep(120)
-    match_df.to_sql('winrate_data_p24', main_db, if_exists='append', index=False)
+    match_df.to_sql('winrate_data', main_db, if_exists='append', index=False)
     print(f'Data insertion for game {game_id} complete.')
 
 # Commit the changes and close the connection
