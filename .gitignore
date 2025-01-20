@@ -3,3 +3,4 @@ sqlite_database/project_database.db
 .idea/
 api_calls/api_key.env
 airflow-docker/logs/*
+api_calls/__pycache__/*
