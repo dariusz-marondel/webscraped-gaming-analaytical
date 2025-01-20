@@ -59,7 +59,7 @@ It is intended to display my skill in few technologies combined such as:
 ## Technicals
 
 1. Project was developed using 'Pycharm CE v2024.3.1.1' and 'Visual Studio Code v1.95.3'
-2. It was published first and only on this gitHub - amberlights-py/XX - 
+2. It was published first and only on this [GitHub](https://github.com/dariusz-marondel/)
 3. Its core is 'Python 3.8.10 ' to ensure maximum compatibility with Airflow as specified in its documentation.
 4. 'Apache Airflow v2.10.4' - https://tinyurl.com/airflow-apache
 5. Docker v4.37.2
