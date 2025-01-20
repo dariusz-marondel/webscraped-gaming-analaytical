@@ -1,127 +1,119 @@
--- players table
-create table players_dg_tmp
-(
-    "index"  INTEGER,
-    nickname TEXT
-        constraint players_pk
-            primary key,
-    tagline  TEXT,
-    role     TEXT
+-- PLAYERS TABLE
+CREATE TABLE PLAYERS_DG_TMP (
+    "INDEX"  INTEGER,
+    NICKNAME TEXT,
+    TAGLINE  TEXT,
+    ROLE     TEXT,
+    CONSTRAINT PLAYERS_PK PRIMARY KEY (NICKNAME)
 );
 
-insert into players_dg_tmp("index", nickname, tagline, role)
-select "index", nickname, tagline, role
-from players;
+INSERT INTO PLAYERS_DG_TMP ("INDEX", NICKNAME, TAGLINE, ROLE)
+SELECT "INDEX", NICKNAME, TAGLINE, ROLE
+FROM PLAYERS;
 
-drop table players;
+DROP TABLE PLAYERS;
 
-alter table players_dg_tmp
-    rename to players;
+ALTER TABLE PLAYERS_DG_TMP
+    RENAME TO PLAYERS;
 
-create index ix_players_index
-    on players ("index");
+CREATE INDEX IX_PLAYERS_INDEX
+    ON PLAYERS ("INDEX");
 
-
--- champion_pool table
-
-create table champion_pool_dg_tmp
-(
-    "index"  INTEGER
-        constraint champion_pool_pk
-            primary key,
-    role     TEXT,
-    champion TEXT
+-- CHAMPION_POOL TABLE
+CREATE TABLE CHAMPION_POOL_DG_TMP (
+    "INDEX"  INTEGER,
+    ROLE     TEXT,
+    CHAMPION TEXT,
+    CONSTRAINT CHAMPION_POOL_PK PRIMARY KEY ("INDEX")
 );
 
-insert into champion_pool_dg_tmp("index", role, champion)
-select "index", role, champion
-from champion_pool;
+INSERT INTO CHAMPION_POOL_DG_TMP ("INDEX", ROLE, CHAMPION)
+SELECT "INDEX", ROLE, CHAMPION
+FROM CHAMPION_POOL;
 
-drop table champion_pool;
+DROP TABLE CHAMPION_POOL;
 
-alter table champion_pool_dg_tmp
-    rename to champion_pool;
+ALTER TABLE CHAMPION_POOL_DG_TMP
+    RENAME TO CHAMPION_POOL;
 
-create index ix_champion_pool_index
-    on champion_pool ("index");
+CREATE INDEX IX_CHAMPION_POOL_INDEX
+    ON CHAMPION_POOL ("INDEX");
 
--- champions table 
-create table champions_dg_tmp
-(
-    "index"              INTEGER,
-    id                   TEXT
-        constraint champions_pk
-            primary key,
-    name                 TEXT,
-    title                TEXT,
-    attack               INTEGER,
-    defense              INTEGER,
-    magic                INTEGER,
-    difficulty           INTEGER,
-    tags                 TEXT,
-    partype              TEXT,
-    hp                   INTEGER,
-    hpperlevel           INTEGER,
-    mp                   INTEGER,
-    mpperlevel           REAL,
-    movespeed            INTEGER,
-    armor                INTEGER,
-    armorperlevel        REAL,
-    spellblock           INTEGER,
-    spellblockperlevel   REAL,
-    attackrange          INTEGER,
-    hpregen              REAL,
-    hpregenperlevel      REAL,
-    mpregen              REAL,
-    mpregenperlevel      REAL,
-    crit                 INTEGER,
-    critperlevel         INTEGER,
-    attackdamage         INTEGER,
-    attackdamageperlevel REAL,
-    attackspeedperlevel  REAL,
-    attackspeed          REAL
+-- CHAMPIONS TABLE
+CREATE TABLE CHAMPIONS_DG_TMP (
+    "INDEX"              INTEGER,
+    ID                   TEXT,
+    NAME                 TEXT,
+    TITLE                TEXT,
+    ATTACK               INTEGER,
+    DEFENSE              INTEGER,
+    MAGIC                INTEGER,
+    DIFFICULTY           INTEGER,
+    TAGS                 TEXT,
+    PARTYPE              TEXT,
+    HP                   INTEGER,
+    HPPERLEVEL           INTEGER,
+    MP                   INTEGER,
+    MPPERLEVEL           REAL,
+    MOVESPEED            INTEGER,
+    ARMOR                INTEGER,
+    ARMORPERLEVEL        REAL,
+    SPELLBLOCK           INTEGER,
+    SPELLBLOCKPERLEVEL   REAL,
+    ATTACKRANGE          INTEGER,
+    HPREGEN              REAL,
+    HPREGENPERLEVEL      REAL,
+    MPREGEN              REAL,
+    MPREGENPERLEVEL      REAL,
+    CRIT                 INTEGER,
+    CRITPERLEVEL         INTEGER,
+    ATTACKDAMAGE         INTEGER,
+    ATTACKDAMAGEPERLEVEL REAL,
+    ATTACKSPEEDPERLEVEL  REAL,
+    ATTACKSPEED          REAL,
+    CONSTRAINT CHAMPIONS_PK PRIMARY KEY (ID)
 );
 
-insert into champions_dg_tmp("index", id, name, title, attack, defense, magic, difficulty, tags, partype, hp,
-                             hpperlevel, mp, mpperlevel, movespeed, armor, armorperlevel, spellblock,
-                             spellblockperlevel, attackrange, hpregen, hpregenperlevel, mpregen, mpregenperlevel, crit,
-                             critperlevel, attackdamage, attackdamageperlevel, attackspeedperlevel, attackspeed)
-select "index",
-       id,
-       name,
-       title,
-       attack,
-       defense,
-       magic,
-       difficulty,
-       tags,
-       partype,
-       hp,
-       hpperlevel,
-       mp,
-       mpperlevel,
-       movespeed,
-       armor,
-       armorperlevel,
-       spellblock,
-       spellblockperlevel,
-       attackrange,
-       hpregen,
-       hpregenperlevel,
-       mpregen,
-       mpregenperlevel,
-       crit,
-       critperlevel,
-       attackdamage,
-       attackdamageperlevel,
-       attackspeedperlevel,
-       attackspeed
-from champions;
+INSERT INTO CHAMPIONS_DG_TMP ("INDEX", ID, NAME, TITLE, ATTACK, DEFENSE, MAGIC, DIFFICULTY, TAGS, PARTYPE, HP,
+                             HPPERLEVEL, MP, MPPERLEVEL, MOVESPEED, ARMOR, ARMORPERLEVEL, SPELLBLOCK,
+                             SPELLBLOCKPERLEVEL, ATTACKRANGE, HPREGEN, HPREGENPERLEVEL, MPREGEN, MPREGENPERLEVEL, CRIT,
+                             CRITPERLEVEL, ATTACKDAMAGE, ATTACKDAMAGEPERLEVEL, ATTACKSPEEDPERLEVEL, ATTACKSPEED)
+SELECT "INDEX",
+       ID,
+       NAME,
+       TITLE,
+       ATTACK,
+       DEFENSE,
+       MAGIC,
+       DIFFICULTY,
+       TAGS,
+       PARTYPE,
+       HP,
+       HPPERLEVEL,
+       MP,
+       MPPERLEVEL,
+       MOVESPEED,
+       ARMOR,
+       ARMORPERLEVEL,
+       SPELLBLOCK,
+       SPELLBLOCKPERLEVEL,
+       ATTACKRANGE,
+       HPREGEN,
+       HPREGENPERLEVEL,
+       MPREGEN,
+       MPREGENPERLEVEL,
+       CRIT,
+       CRITPERLEVEL,
+       ATTACKDAMAGE,
+       ATTACKDAMAGEPERLEVEL,
+       ATTACKSPEEDPERLEVEL,
+       ATTACKSPEED
+FROM CHAMPIONS;
 
-drop table champions;
+DROP TABLE CHAMPIONS;
 
-alter table champions_dg_tmp
-    rename to champions;
+ALTER TABLE CHAMPIONS_DG_TMP
+    RENAME TO CHAMPIONS;
 
-create index ix_champions_index
-    on champions ("index");
+CREATE INDEX IX_CHAMPIONS_INDEX
+    ON CHAMPIONS ("INDEX");

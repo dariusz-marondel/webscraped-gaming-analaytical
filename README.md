@@ -28,7 +28,7 @@ All players are very competitive so the team's primary objective is to win the t
 In simple words: __They want to know what character picked in the upcoming tournament in their favorite game.__ 
 
 ### Data
-Since my client does not produce nor store any data, the actual information about global statistics would have to be obtained by me. I will visit game developer portal to see what kind of data I can legally and oficially pull from their website so the data I provide with client will have actual value based on real time data. 
+Since my client neither produce nor store any data, the actual information about global statistics would have to be obtained by me. I will visit game developer portal to see what kind of data I can legally and oficially pull from their website so the data I provide with client will have actual value based on real time data. 
 
 Statistics disclaimer: For technical reasons I pulled only such amount of data which will be updated once app got an accpet from Riot for a dedicated API_key. Logic in data analysis is still solid, but regardless of sample i adopted an assumption that there is enough data to assume that Central Limit Theorem's requirements are met. This way I will be conluding as if there were much more data for specific champions, which may yield some interesting observations and conclusions. 
 
@@ -41,18 +41,18 @@ I designed three reports that can answer following questions:
 ## Approach to solution 
 As I have some spare time in the evenings (god bless no overtime this time!) I decided to pull some data from Riot Games API to prepare some report on our respective champion pools. I have decided that since we may play some clash again in the future and evenings without overtime are not to be taken for granted (!), it is better to already prepare the automation of the report regardless of its simplicity (or maybe even more willingly taking that into account). <br>
 
-I inquired my friends of required data and began working. 
+[I inquired my friends of required data and began working.](sqlite_database/sample_data_etl.ipynb) 
 
 ## Goal of the project
-The projects contain of scheduled workflows pulling data from Riot games developer API, then transforming it to make some beautiful (reasonably!) report(s) with some simple insights. I aim to explain all as clear as possible so even non-technical people could find it interesting but also to demonstrate ability to communicate without overcomplicating things. The project is more focused on display of technical and data literacy rather that presenting any grounbreaking market research. 
+The projects contain workflows pulling data from Riot games developer API, then transforming it to make some beautiful (reasonably!) report(s) that answer client's question. I aim to explain all as clear as possible so even non-technical people could find it interesting but also to demonstrate ability to communicate without overcomplicating things. The project is more focused on display of technical and data literacy rather that presenting any grounbreaking market research. 
 
 It is intended to display my skill in few technologies combined such as:
 1. SQL 
 2. API calls
 3. Data handling
-4. Docker
+4. Python
 5. Airflow
-6. Python
+6. Docker
 7. Data visualisation - Seaborn, Plotly
 
 
@@ -68,3 +68,5 @@ It is intended to display my skill in few technologies combined such as:
 
 From gitHub with love
 Dariusz
+
+[def]: .
